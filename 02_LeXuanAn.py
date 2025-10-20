@@ -1,21 +1,21 @@
 # student_manager.py
 
-student_list = []
+student_list = [
+    {"name": "Nguyen Van An", "year_of_birth": 2003, "address": "Da Nang"},
+    {"name": "Tran Thi Binh", "year_of_birth": 2002, "address": "Quang Nam"},
+    {"name": "Le Van Hung", "year_of_birth": 2003, "address": "Hue"}
+]
 
-def add_student(name, year_of_birth, address):
+def print_student_list():
     """
-    Thêm sinh viên mới vào danh sách.
+    In danh sách sinh viên.
     """
-    student = {
-        "name": name,
-        "year_of_birth": year_of_birth,
-        "address": address
-    }
-    student_list.append(student)
-    print(f"Da them sinh vien {name} thanh cong.")
+    print("--- DANH SACH SINH VIEN ---")
+    if not student_list:
+        print("Danh sach trong.")
+    else:
+        for s in student_list:
+            print(f" - Ten: {s['name']}, Nam sinh: {s['year_of_birth']}, Dia chi: {s['address']}")
 
 if __name__ == "__main__":
-    print("--- THEM SINH VIEN ---")
-    add_student("Nguyen Van An", 2003, "Da Nang")
-    add_student("Tran Thi Binh", 2002, "Quang Nam")
-    print(student_list)
+    print_student_list()
