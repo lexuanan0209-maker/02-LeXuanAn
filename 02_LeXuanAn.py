@@ -6,16 +6,19 @@ student_list = [
     {"name": "Le Van Hung", "year_of_birth": 2003, "address": "Hue"}
 ]
 
-def print_student_list():
+def search_student(search_name):
     """
-    In danh sách sinh viên.
+    Tìm kiếm sinh viên theo tên (không phân biệt hoa thường).
     """
-    print("--- DANH SACH SINH VIEN ---")
-    if not student_list:
-        print("Danh sach trong.")
-    else:
-        for s in student_list:
+    print("--- KET QUA TIM KIEM ---")
+    found = False
+    for s in student_list:
+        if search_name.lower() in s['name'].lower():
             print(f" - Ten: {s['name']}, Nam sinh: {s['year_of_birth']}, Dia chi: {s['address']}")
+            found = True
+    if not found:
+        print("Khong tim thay sinh vien nao.")
 
 if __name__ == "__main__":
-    print_student_list()
+    search_student("an")
+    search_student("Dung")
